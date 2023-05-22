@@ -7,9 +7,18 @@ use App\Models\mahasiswaModel;
 
 class mahasiswaController extends Controller
 {
+    public function cari(Request $request)
+	{
+		$cari = $request->cari;
+
+		$mhs = mahasiswaModel::where('nama','like',"%".$cari."%")->paginate(10);
+		return view('mhs.index',['mahasiswa' => $mhs]);
+ 
+	}
+    
     public function index()
     {
-        $mhs = mahasiswaModel::all();
+        $mhs = mahasiswaModel::paginate(10);
         return view('mhs.index', [
             'mahasiswa' => $mhs
         ]);

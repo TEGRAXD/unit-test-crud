@@ -18,6 +18,7 @@ Route::get('/', function () {
     return view('header/navbar');
 });
 Route::get('/index-mhs', [mahasiswaController::class, 'index']);
+Route::get('/index-mhs/cari', [mahasiswaController::class, 'cari']);
 Route::get('/tambah-mhs', [mahasiswaController::class, 'indexTambah']);
 Route::post('/store-mhs', [mahasiswaController::class, 'store']);
 Route::get('/edit-mhs/{id}', [mahasiswaController::class, 'edit']);
