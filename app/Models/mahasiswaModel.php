@@ -13,6 +13,20 @@ class mahasiswaModel extends Model
     protected $fillable = [
         'nama',
         'nim',
+        'jenis_kelamin',
         'alamat',
+        'fakultas_id',
+        'program_studi_id'
     ];
+
+    public function fakultasModel() 
+    {
+        return $this->belongsTo(fakultasModel::class,'fakultas_id','id');
+    }
+
+    public function program_studi_model()
+    {
+        return $this->belongsTo(program_studi_model::class,'program_studi_id','id');
+    }
+
 }

@@ -14,13 +14,14 @@ use App\Http\Controllers\mahasiswaController;
 |
 */
 
-Route::get('/', function () {
-    return view('header/navbar');
-});
-Route::get('/index-mhs', [mahasiswaController::class, 'index']);
+// Route::get('/', function () {
+//     return view('header/navbar');
+// });
+Route::get('/', [mahasiswaController::class, 'index']);
 Route::get('/index-mhs/cari', [mahasiswaController::class, 'cari']);
 Route::get('/tambah-mhs', [mahasiswaController::class, 'indexTambah']);
 Route::post('/store-mhs', [mahasiswaController::class, 'store']);
 Route::get('/edit-mhs/{id}', [mahasiswaController::class, 'edit']);
 Route::post('/update-mhs', [mahasiswaController::class, 'update']);
 Route::get('/delete-mhs/{id}', [mahasiswaController::class, 'delete']);
+Route::get('/getProdi', [mahasiswaController::class, 'getProdi']);

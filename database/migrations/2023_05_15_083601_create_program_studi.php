@@ -14,7 +14,10 @@ return new class extends Migration
         Schema::create('program_studi', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
+            $table->unsignedBigInteger('fakultas_model_id');
             $table->timestamps();
+
+            $table->foreign('fakultas_model_id')->references('id')->on('fakultas')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
