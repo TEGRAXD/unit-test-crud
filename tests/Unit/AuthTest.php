@@ -24,8 +24,8 @@ class AuthTest extends TestCase
     
         // Submit form login dengan akun yang sudah ada
         $this->submitForm('Login', [
-            'email'    => 'dimas@gmail.com',
-            'password' => 'dimas',
+            'email'    => 'wahyu@gmail.com',
+            'password' => 'wahyu',
         ]);
 
         // Lihat halaman ter-redirect ke url '/index-mhs' (login sukses).

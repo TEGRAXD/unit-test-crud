@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>CodePen - Animated Login Form using Html &amp; CSS Only</title>
+    <title>Login</title>
     <link
       rel="stylesheet"
       type="text/css"
@@ -277,7 +277,7 @@
         <form action="/login" method="POST">
             @csrf
         <div class="content">
-          <h2>Sign In</h2>
+          <h2>Login</h2>
           <div class="form">
             <div class="inputBox">
               <input name="email" type="email" required />

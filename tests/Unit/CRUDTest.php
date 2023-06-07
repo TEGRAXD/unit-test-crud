@@ -11,6 +11,7 @@ use Faker\Factory as Faker;
 
 class CRUDTest extends TestCase
 {
+    // digunakan untuk menghapus database ketika test selesai dijalankan
     // use RefreshDatabase;
 
     protected function setUp(): void
