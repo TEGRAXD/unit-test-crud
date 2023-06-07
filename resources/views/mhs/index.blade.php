@@ -1,7 +1,7 @@
 @extends('header.navbar')
 @section('content')
 <div class="col-lg-12 grid-margin stretch-card " style="margin-top: 10%;">
-    <div class="card">
+    <div class="card mb-4">
         <div class="card-body">
             <div>
                 <form action="/index-mhs/cari" method="get">
@@ -22,7 +22,8 @@
                 </form>
             </div>
             <div class="d-flex justify-content-end">
-                <a href="/tambah-mhs" class="btn btn-outline-success"><i class="mdi mdi-account-plus"></i> Tambah Data</a>
+                <a href="/mhs/cetak_pdf" class="btn btn-primary" target="_blank">CETAK PDF</a>
+                <a href="/tambah-mhs" class="btn btn-outline-success ms-2"><i class="mdi mdi-account-plus"></i> Tambah Data</a>
             </div>
             <div class="table-responsive">
                 <table class="table table-striped">
@@ -64,7 +65,7 @@
                                 {{$mhs->program_studi_model->nama}}
                             </td>
                             <td>
-                                <a href="edit-mhs/{{ $mhs->id }}">Edit</a>
+                                <a href="edit-mhs/{{ $mhs->id }}" name="edit-{{ $mhs->id }}">Edit</a>
 
                                 <a href="/delete-mhs/{{ $mhs->id }}"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                                         <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z" />
@@ -75,14 +76,6 @@
                         @endforeach
                     </tbody>
                 </table>
-                Halaman : {{ $mahasiswa->currentPage() }} <br />
-                Jumlah Data : {{ $mahasiswa->total() }} <br />
-                Data Per Halaman : {{ $mahasiswa->perPage() }} <br />
-
-                {{-- Pagination --}}
-                <div class="d-flex justify-content-start mt-4">
-                    {!! $mahasiswa->links() !!}
-                </div>
             </div>
         </div>
     </div>

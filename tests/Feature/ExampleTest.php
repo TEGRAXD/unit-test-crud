@@ -3,9 +3,9 @@
 namespace Tests\Feature;
 
 // use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
+use Tests\TestCaseLaravel;
 
-class ExampleTest extends TestCase
+class ExampleTest extends TestCaseLaravel
 {
     /**
      * A basic test example.

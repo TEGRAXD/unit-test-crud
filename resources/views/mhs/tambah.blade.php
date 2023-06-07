@@ -42,6 +42,7 @@
                 <div class="row">
                     <select class="single-select form-control" id="fakultas" name="fakultas_id" style="width:100%;height: 100%;">
                         <option selected>Pilih</option>
+                        
                         @foreach($fakultas as $data)
                         <option value="{{$data->id}}">{{$data->nama}}</option>
                         @endforeach
@@ -52,27 +53,24 @@
                 </div>
                 <div class="row">
                     <select class="single-select form-control" id="prodi" name="program_studi_id" style="width:100%;height: 100%;">
+                    <option selected>Pilih</option>
+                        @foreach($prodi as $data)
+                        <option value="{{$data->id}}">{{$data->nama}}</option>
+                        @endforeach
                     </select>
                 </div>
                 <div class="row mt-3 ">
-                    <button type="submit" class="btn btn-primary w-25">
-                        Tambah
-                    </button>
+                    <button type="submit" class="btn btn-primary w-25">Tambah</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
     $(document).ready(function() {
-
         $(document).on('change', '#fakultas', function() {
             var id = $(this).val();
-            console.log(id);
-            var parent = $(this).parents();
-            var op = " ";
-
             $.ajax({
                 type: 'get',
                 url: '{{url('/getProdi')}}',
@@ -80,6 +78,7 @@
                     'id': id
                 },
                 success: function(data) {
+                    console.log(data);
                     $("#prodi").empty();
                     $("#prodi").append('<option>---Pilih prodi---</option>');
                     for (var i = 0; i < data.length; i++) {
@@ -89,6 +88,6 @@
             })
         })
     });
-</script>
+</script> -->
 
 @endsection
