@@ -13,7 +13,8 @@ Pengujian ini menggunakan library `laravel/browser-kit-testing` untuk mempermuda
 ## Panduan Instalasi
 - Download project atau jalankan `git clone https://github.com/suganda8/unit-test-crud.git`
 - Copy `.env.example` menjadi `.env`
-- Ubah pengaturan database
+- Ubah pengaturan database menjadi `paw_laravel`
+- Import file sql `paw_laravel.sql` ke database `paw_laravel` (Buat terlebih dahulu jika belum ada)
 - Jalankan `php artisan key:generate`
 - Jalankan `composer install` dan tunggu hingga selesai
 - Gunakan `php artisan test` untuk menjalankan semua test, atau
